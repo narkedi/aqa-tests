@@ -364,6 +364,7 @@ fi
 				if [ -d "$SDKDIR/openjdkbinary/tmp" ]; then
 					rm -rf $SDKDIR/openjdkbinary/tmp/*
 				else
+					echo "Created the tmp folder"
 					mkdir $SDKDIR/openjdkbinary/tmp
 				fi
 				echo "Uncompressing file: $jar_name ..."
@@ -373,7 +374,10 @@ fi
 					cd ./tmp
 					pax -p xam -rzf ../$jar_name
 				else
-					gzip -cd $jar_name | (cd tmp && tar xof -)
+					echo "Inside the else loop"
+					pwd
+					echo $jar_name
+					gzip -cd $jar_name | (cd $SDKDIR/openjdkbinary/tmp && tar xof -)
 				fi
 
 				cd $SDKDIR/openjdkbinary/tmp
