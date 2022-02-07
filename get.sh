@@ -380,7 +380,7 @@ fi
 					echo $jar_name
 					ls -lrt
 					echo "gzip -cd $jar_name | (cd $SDKDIR/openjdkbinary/tmp && tar xof -)"
-					gzip -cd $jar_name | (cd $SDKDIR/openjdkbinary/tmp && tar xof -)
+					gzip -cd $jar_name | (cd tmp && tar xof -)
 				fi
 
 				cd $SDKDIR/openjdkbinary/tmp
