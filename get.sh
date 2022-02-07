@@ -378,7 +378,8 @@ fi
 					echo "Inside the else loop"
 					pwd
 					echo $jar_name
-					ls
+					ls -lrt
+					echo "gzip -cd $jar_name | (cd $SDKDIR/openjdkbinary/tmp && tar xof -)"
 					gzip -cd $jar_name | (cd $SDKDIR/openjdkbinary/tmp && tar xof -)
 				fi
 
