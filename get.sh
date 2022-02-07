@@ -279,6 +279,7 @@ fi
 				echo "_ENCODE_FILE_NEW=UNTAGGED curl -OLJSk${curl_verbosity} ${curl_options} $file"
 				_ENCODE_FILE_NEW=UNTAGGED curl -OLJSk${curl_verbosity} ${curl_options} $file
 				download_exit_code=$?
+				echo "DOWNLOAD EXIT CODE...$download_exit_code"
 				count=$(( $count + 1 ))
 			done
 
